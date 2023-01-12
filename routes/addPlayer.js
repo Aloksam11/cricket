@@ -23,4 +23,20 @@ addPlayer.get('/players',(req,res) => {
     );
   });
 
+  addPlayer.get("/players/:Name",(req,res) => {
+      var name = req.params.Name;
+      Cricket.find(
+        {Name: name},
+        { _id: 0, __v: 0 },
+        {},
+        function (error,result) {
+            if (error) {
+              console.log(error);
+            } else {
+                res.send(result);
+            }
+        }
+      )  
+    });
+
 module.exports = addPlayer;
