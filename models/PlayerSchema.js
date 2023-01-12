@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongodb = require('mongoose');
 
 const cricketSchema = new mongodb.Schema({
     Name: String,

@@ -10,33 +10,8 @@ mongodb.connect(
   .catch((err) => console.log("Not able to connect to DB"));
 
 const addPlayer = require("./routes/addPlayer")
-app.use("/player",addPlayer);
-// const newplayer = new Cricket({
-//   Name: "Virat Kohli",
-//   Runs: 31335,
-//   Type: "Balanced",
-//   Country: "India"
-// })
+app.use("/cricket",addPlayer);
 
-// newplayer.save();
-// app.get('/', function (req, res) {
-//   res.send('Hello World')
-// });
-
-// app.get('/players',(req,res) => {
-//   Cricket.find(
-//     {},
-//     {_id:0,__v:0},
-//     {},
-//     function(error,result){
-//       if(error){
-//         console.log(error);
-//       } else {
-//         res.send(result);
-//       }
-//     }
-//   );
-// });
 app.listen(5000,() =>{
     console.log("server started");
 })

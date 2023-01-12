@@ -1,4 +1,4 @@
-const UserModel =require("../models/USerSchema")
+const PlayerModel =require("../models/PlayerSchema");
 
 function RegisterPlayer(req, res) {
     let Name = req.body.Name;
@@ -12,7 +12,7 @@ function RegisterPlayer(req, res) {
         Country :Country
     }
     
-    let resultData = new UserModel(playerdata);
+    let resultData = new PlayerModel(playerdata);
     resultData.save().then(item => {
         res.send("Player added successfully")
     }).catch((err) => {
