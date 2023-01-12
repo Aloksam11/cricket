@@ -24,7 +24,8 @@ addPlayer.get('/players',(req,res) => {
   });
 
   addPlayer.get("/players/:Name",(req,res) => {
-      var name = req.params.Name;
+    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");  
+    var name = req.params.Name;
       Cricket.find(
         {Name: name},
         { _id: 0, __v: 0 },
